@@ -25,6 +25,7 @@ var rpmInput = document.getElementById('rpm');
 var tqInput = document.getElementById('tq');
 var hpInput = document.getElementById('hp');
 var kwInput = document.getElementById('kw');
+var tqRadio = document.getElementById('tq-radio');
 var hpRadio = document.getElementById('hp-radio');
 var kwRadio = document.getElementById('kw-radio');
 var hpResult;
@@ -32,35 +33,27 @@ var kwResult;
 
 if (hpRadio.checked == true) {
 
-  rpmInput.removeAttribute('disabled');
   tqInput.removeAttribute('disabled');
   hpInput.setAttribute('disabled', '');
-  kwInput.setAttribute('disabled', '');
 
-}else if(kwRadio.checked == true) {
+}else if(tqRadio.checked == true) {
 
   hpInput.removeAttribute('disabled', '');
-  kwInput.setAttribute('disabled', '');
   tqInput.setAttribute('disabled', '');
-  rpmInput.setAttribute('disabled', '');
 
 };
 
 hpRadio.addEventListener('click', function() {
 
-  rpmInput.removeAttribute('disabled');
   tqInput.removeAttribute('disabled');
   hpInput.setAttribute('disabled', '');
-  kwInput.setAttribute('disabled', '');
 
 });
 
-kwRadio.addEventListener('click', function() {
+tqRadio.addEventListener('click', function() {
 
   hpInput.removeAttribute('disabled', '');
-  kwInput.setAttribute('disabled', '');
   tqInput.setAttribute('disabled', '');
-  rpmInput.setAttribute('disabled', '');
 
 });
 
@@ -76,11 +69,19 @@ function calcPower() {
 
     result.innerHTML = hpResult + ' ' + 'hp' + '<br>' + hpKw + ' ' + 'Killowatts';
 
-  }else if(kwRadio.checked == true) {
-    var kwResult =
+  }else if(tqRadio.checked == true) {
+    var tqResult =
       Math.round(
-        Number(hpInput.value) * (.746)
+        Number(hpInput.value) * 5252 / Number(rpmInput.value)
       );
-      result.innerHTML = kwResult + ' ' + 'KilloWatts';
+      result.innerHTML = tqResult + ' ' + 'lb/ft';
   }
 };
+
+function calcPower2() {
+
+  var kwHp = Math.round(Number(kwInput.value) / .746);
+
+  result2.innerHTML = kwHp + ' ' + 'Horsepower';
+
+}
