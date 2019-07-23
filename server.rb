@@ -15,3 +15,11 @@ end
 get '/fuel' do
   erb :fuel, :layout => :application
 end
+
+get '/power' do
+  erb :power, :layout => :application
+end
+
+get '/ve' do
+  erb :ve, :layout => :application
+end

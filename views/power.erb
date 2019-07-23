@@ -1,0 +1,52 @@
+<h1 class='my-5 title text-center'>Power Conversion</h1>
+
+<div class="row w-100 justify-content-center">
+
+  <legend class="col-form-label col-sm-2">I want to solve for</legend>
+  <fieldset class="form-group">
+    <div class="col-sm-10">
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="units" id="hp-radio" value="option1" checked>
+        <label class="form-check-label">
+          Horsepower
+        </label>
+      </div>
+      <div class="form-check">
+        <input class="form-check-input" type="radio" name="units" id="kw-radio" value="option3">
+        <label class="form-check-label">
+          KilloWatts
+        </label>
+      </div>
+    </div>
+  </fieldset>
+
+</div>
+
+
+<div class='row w-100 justify-content-center form-group'>
+  <label class='col-sm-2 col-form-label'>RPM</label>
+  <input id='rpm' class='form-control col-2' type="text">
+</div>
+
+<div class='row w-100 justify-content-center form-group'>
+  <label class='col-sm-2 col-form-label'>Torque</label>
+  <input id='tq' class='form-control col-2' type="text">
+</div>
+
+<div class='row w-100 justify-content-center form-group'>
+  <label class='col-sm-2 col-form-label'>Horsepower</label>
+  <input id='hp' class='form-control col-2' type="text">
+</div>
+
+<div class='row w-100 justify-content-center form-group'>
+  <label class='col-sm-2 col-form-label'>Killowatts</label>
+  <input id='kw' class='form-control col-2' type="text">
+</div>
+
+<div class='row w-100 justify-content-center'>
+  <p class="btn btn-primary" onclick='calcPower()'>Calculate</p>
+</div>
+
+</form>
+
+<p id='result' class='my-3 display-4 title text-center'></p>
