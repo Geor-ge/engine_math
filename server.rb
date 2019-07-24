@@ -12,7 +12,7 @@ get '/comp_ratio' do
   erb :comp_ratio, :layout => :application
 end
 
-get '/fuel' do
+get '/fuel_system' do
   erb :fuel, :layout => :application
 end
 
@@ -20,6 +20,6 @@ get '/power' do
   erb :power, :layout => :application
 end
 
-get '/ve' do
-  erb :ve, :layout => :application
+get '/piston_speed' do
+  erb :piston_speed, :layout => :application
 end

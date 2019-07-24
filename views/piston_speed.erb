@@ -1,10 +1,11 @@
-<h1 class='my-5 title text-center'>Engine Displacement</h1>
+<h1 class='my-5 title text-center'>Piston Speed</h1>
 
 <form>
 
   <div class="row w-100 justify-content-center">
+
     <legend class="col-form-label col-sm-2">Select Units</legend>
-  <fieldset class="form-group">
+    <fieldset class="form-group">
       <div class="col-sm-10">
         <div class="form-check">
           <input class="form-check-input" type="radio" name="units" id="standard" value="option1" checked>
@@ -19,15 +20,9 @@
           </label>
         </div>
       </div>
-  </fieldset>
-</div>
-
-
-
-  <div class='row w-100 justify-content-center form-group'>
-    <label class='col-sm-2 col-form-label'>Bore (in/mm)</label>
-    <input id='bore' class='form-control col-2' type="text">
+    </fieldset>
   </div>
+
 
   <div class='row w-100 justify-content-center form-group'>
     <label class='col-sm-2 col-form-label'>Stroke (in/mm)</label>
@@ -35,12 +30,12 @@
   </div>
 
   <div class='row w-100 justify-content-center form-group'>
-    <label class='col-sm-2 col-form-label'>Number of Cylinders</label>
-    <input id='cylinders' class='form-control col-2' type="text">
+    <label class='col-sm-2 col-form-label'>RPM</label>
+    <input id='rpm' class='form-control col-2' type="text">
   </div>
 
   <div class='row w-100 justify-content-center'>
-    <p class="btn btn-primary" onclick='calcDisplacement()'>Calculate</p>
+    <p class="btn btn-primary" onclick='calcPistonSpeed()'>Calculate</p>
   </div>
 
 </form>
