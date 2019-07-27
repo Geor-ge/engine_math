@@ -12,7 +12,7 @@ get '/comp_ratio' do
   erb :comp_ratio, :layout => :application
 end
 
-get '/fuel_system' do
+get '/fuel' do
   erb :fuel, :layout => :application
 end
 
