@@ -3,8 +3,10 @@ var stroke = document.getElementById('stroke');
 var cylinders = document.getElementById('cylinders');
 var rpmInput = document.getElementById('rpm');
 var hpInput = document.getElementById('hp');
-var standardRadio = document.getElementById('standard')
-var metricRadio = document.getElementById('metric')
+var standardRadio = document.getElementById('standard');
+var metricRadio = document.getElementById('metric');
+var inches = document.getElementById('inch');
+var millimeter = document.getElementById('millimeter');
 var result = document.getElementById('result');
 var result2 = document.getElementById('result2');
 var result3 = document.getElementById('result3');
@@ -15,11 +17,13 @@ var bore = document.getElementById('bore');
 function calcDisplacement() {
   var dStandard = Math.round(Number(bore.value**2)*Number(stroke.value)*Number(cylinders.value)*.7854);
   var dMetric = (.000001*(Number(bore.value**2)*Number(stroke.value)*Number(cylinders.value)*.7854)).toFixed(1);
-  var dis2 = (dStandard/61.02).toFixed(1);
+
+  var s2m = (dStandard/61.02).toFixed(1);
+  var m2s = Math.round(dMetric*61.02);
   if (standardRadio.checked == true) {
-    result.innerHTML = dStandard + ' ' + 'cu.in.' + '<br>' + dis2 + ' ' + 'liters' ;
+    result.innerHTML = dStandard + ' ' + 'cu.in.' + '<br>' + s2m + 'L' ;
   }else if(metricRadio.checked == true){
-    result.innerHTML = dMetric + ' ' + 'liters';
+    result.innerHTML = dMetric + 'L' + '<br>' + m2s + ' cu.in.';
   }
 };
 
@@ -70,14 +74,16 @@ function calcPower() {
 
     var hpKw = Math.round(hpResult * .746);
 
-    result.innerHTML = hpResult + ' ' + 'hp' + '<br>' + hpKw + ' ' + 'Kw';
+    result.innerHTML = hpResult + ' ' + 'Hp' + '<br>' + hpKw + ' ' + 'kW';
 
   }else if(tqRadio.checked == true) {
     var tqResult =
     Math.round(
       Number(hpInput.value) * 5252 / Number(rpmInput.value)
     );
-    result.innerHTML = tqResult + ' ' + 'lb/ft';
+
+    var newton = Math.round(tqResult * 1.36);
+    result.innerHTML = tqResult + ' lb/ft' + '<br>' + newton + ' Nm';
   }
 };
 
@@ -93,9 +99,9 @@ function calcWatts() {
 //Piston Speed
 function calcPistonSpeed() {
 
-  if (metricRadio.checked == true) {
+  if (millimeter.selected == true) {
     var pistonDistance = (Number(stroke.value) / 25.4) / 12;
-  }else if(standardRadio.checked == true){
+  }else if(inches.selected == true){
     var pistonDistance = Number(stroke.value) / 12;
   };
   var pistonSpeed = (Number(rpmInput.value) * 2 * pistonDistance).toFixed(0);
@@ -131,7 +137,7 @@ function calcInjectorFlow() {
   var safeInjectorFlowCC = Math.round(safeInjectorFlow*10.2);
 
   result.innerHTML = 'Required Injector Flow: <br>' + safeInjectorFlow + ' Lbs/Hr' + '<br>' + safeInjectorFlowCC + ' CC/min';
-  result2.innerHTML = 'Required Pump Flow: <br>' + pumpFlowL + ' Liters/Hr' + '<br>' + pumpFlowG + ' Gallons/HR';
+  result2.innerHTML = 'Required Pump Flow: <br>' + pumpFlowL + ' Liters/Hr' + '<br>' + pumpFlowG + ' Gallons/Hr';
 };
 
 function calcInjectorFlow2() {
