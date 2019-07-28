@@ -16,7 +16,6 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  rack-protection!
   sinatra!
 
 BUNDLED WITH
