@@ -147,5 +147,8 @@ function calcInjectorFlow2() {
       * Number(oldFlowRate.value)
     ).toFixed(2);
 
-  result3.innerHTML = 'Adjusted Inector Flow' + '<br>' + adjFlowRate + ' Lbs/Hr';
+    var adjFlowRateCC = Math.round(adjFlowRate * 10.2)
+
+  result3.innerHTML = 'Adjusted Injector Flow:' + '<br>' + adjFlowRate + ' Lbs/Hr'
+   + '<br>' + adjFlowRateCC + ' CC/min';
 }
