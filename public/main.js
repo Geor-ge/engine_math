@@ -63,7 +63,7 @@ if (window.location.pathname == '/power'){
 
   });
 }
-//Hp <--> Torque / Hp --> Killowatts
+//Hp <--> Torque / Hp --> Kilowatts
 function calcPower() {
   if (hpRadio.checked == true) {
 
@@ -87,7 +87,7 @@ function calcPower() {
   }
 };
 
-//Killowatts --> Hp
+//Kilowatts --> Hp
 function calcWatts() {
 
   var kwHp = Math.round(Number(kwInput.value) / .746);

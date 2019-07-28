@@ -3,9 +3,9 @@
 <form>
 
   <div class="row w-100 justify-content-center">
-    <legend class="col-form-label col-sm-2">Select Units</legend>
+    <legend class="col-form-label col-6 col-md-2 pl-0 align-self-left">Select Units</legend>
   <fieldset class="form-group">
-      <div class="col-sm-10">
+      <div class="col-md-2 col-6">
         <div class="form-check">
           <input class="form-check-input" type="radio" name="units" id="standard" value="option1" checked>
           <label class="form-check-label">
@@ -25,24 +25,26 @@
 
 
   <div class='row w-100 justify-content-center form-group'>
-    <label class='col-sm-2 col-form-label'>Bore (in/mm)</label>
-    <input id='bore' class='form-control col-2' type="text">
+    <label class='col-md-2 col-6 col-form-label'>Bore (in/mm)</label>
+    <input id='bore' class='form-control col-6 col-md-2' type="text">
   </div>
 
   <div class='row w-100 justify-content-center form-group'>
-    <label class='col-sm-2 col-form-label'>Stroke (in/mm)</label>
-    <input id='stroke' class='form-control col-2' type="text">
+    <label class='col-md-2 col-6 col-form-label'>Stroke (in/mm)</label>
+    <input id='stroke' class='form-control col-6 col-md-2' type="text">
   </div>
 
   <div class='row w-100 justify-content-center form-group'>
-    <label class='col-sm-2 col-form-label'>Number of Cylinders</label>
-    <input id='cylinders' class='form-control col-2' type="text">
+    <label class='col-md-2 col-6 col-form-label'>Number of Cylinders</label>
+    <input id='cylinders' class='form-control col-6 col-md-2' type="text">
   </div>
 
   <div class='row w-100 justify-content-center'>
-    <input type='button' value='Calculate' class="btn btn-primary" onclick='calcDisplacement()'></input>
+    <input type='button' value='Calculate' class="my-3 btn btn-primary" onclick='calcDisplacement()'></input>
   </div>
 
 </form>
 
-<h3 id='result' class='my-3 title text-center'></h3>
+<div class='row w-100 justify-content-center'>
+  <h3 id='result' class='my-3 title text-center'></h3>
+</div>
